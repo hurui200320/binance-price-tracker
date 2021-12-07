@@ -53,7 +53,6 @@ public class PriceFetcher {
             path.add(toSymbol);
             return path;
         }
-        int currentPathLength = path.size();
         var option = priceMap.keySet().stream()
                 // related pair
                 .filter(it -> it.startsWith(currentSymbol))
@@ -62,7 +61,7 @@ public class PriceFetcher {
                 // not a loop
                 .filter(it -> !path.contains(it))
                 .map(it -> {
-                    var tempPath = new LinkedList<>(path.subList(0, currentPathLength));
+                    var tempPath = new LinkedList<>(path);
                     tempPath.add(it);
                     return resolvePath(tempPath, toSymbol, priceMap);
                 })
