@@ -1,5 +1,7 @@
 # binance-price-tracker
 
+***I'm losing interest in cryptocurrency. So I archived this repo.***
+
 Fetch crypto prices from binance and save to AWS DynamoDB.
 
 ## How it works
